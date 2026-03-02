@@ -1,0 +1,306 @@
+/* =========================================================================
+   1. CSS Reset & Variables
+   ========================================================================= */
+:root {
+    /* Color Palette */
+    --color-bg: #FFFFFF;
+    --color-bg-light: #F9FAFB;
+    --color-text: #111827;
+    --color-text-muted: #4B5563;
+    --color-primary: #0052FF; /* Blue CTA */
+    --color-primary-hover: #0043D2;
+    --color-border: #E5E7EB;
+    
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    /* Layout */
+    --container-width: 1100px;
+    --radius-md: 6px;
+    --radius-lg: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================================
+   2. Typography
+   ========================================================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================================
+   3. Layout & Wrappers
+   ========================================================================= */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Paddings */
+.py-md { padding-top: 3rem; padding-bottom: 3rem; }
+.py-lg { padding-top: 5rem; padding-bottom: 5rem; }
+.pt-xl { padding-top: 6rem; }
+.pb-lg { padding-bottom: 4rem; }
+
+/* Backgrounds */
+.bg-light { background-color: var(--color-bg-light); }
+
+/* =========================================================================
+   4. UI Components
+   ========================================================================= */
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.btn-lg {
+    padding: 1rem 2.25rem;
+    font-size: 1.125rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* =========================================================================
+   5. Sections
+   ========================================================================= */
+
+/* Hero Section */
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+}
+
+/* Problem Section */
+.problem-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+.problem-list {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.problem-list li {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.problem-list li::before {
+    content: "•";
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+/* How It Works Section */
+.steps-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step-card {
+    flex: 1;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 auto 1.5rem auto;
+}
+
+.step-card p {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+/* Demo Section */
+.video-placeholder {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    border: 2px dashed #CBD5E1;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg);
+}
+
+.video-placeholder p {
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+/* Beta Access Section */
+.beta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* Contact Form Section */
+.contact-box {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--color-bg);
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    border: 1px solid var(--color-border);
+}
+
+.contact-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-text);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.1);
+}
+
+/* Footer Section */
+.footer p {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* =========================================================================
+   6. Media Queries (Mobile Responsiveness)
+   ========================================================================= */
+@media (max-width: 768px) {
+    .steps-grid {
+        flex-direction: column;
+    }
+
+    .contact-box {
+        padding: 2rem 1.5rem;
+    }
+}
